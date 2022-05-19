@@ -1,16 +1,20 @@
 package toy.narza.clonetracker
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayout
-import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.tabs.TabLayout
+import retrofit2.Call
+import retrofit2.Response
+import toy.narza.clonetracker.db.CloneData
+import toy.narza.clonetracker.network.ApiService
 import toy.narza.clonetracker.ui.main.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +27,20 @@ class MainActivity : AppCompatActivity() {
         val fab: FloatingActionButton = findViewById(R.id.fab)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+
+            ApiService.getProgress().enqueue(object : retrofit2.Callback<List<CloneData>>{
+                override fun onResponse(
+                    call: Call<List<CloneData>>,
+                    response: Response<List<CloneData>>
+                ) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onFailure(call: Call<List<CloneData>>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+            })
         }
     }
 }
