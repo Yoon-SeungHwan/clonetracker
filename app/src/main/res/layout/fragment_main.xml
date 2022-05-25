@@ -5,35 +5,42 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.PlaceholderFragment">
+    tools:context=".ui.main.ProgressFragment">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <toy.narza.clonetracker.ui.custom.ProgressCard
+            android:id="@+id/progress_asia"
+            android:layout_marginTop="@dimen/progress_card_margin_top"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHeight="wrap_content"
+            app:layout_constraintWidth="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:text="Standard"
-            android:defaultFocusHighlightEnabled="true"
-            android:layout_width="wrap_content"
+        <toy.narza.clonetracker.ui.custom.ProgressCard
+            android:id="@+id/progress_america"
+            android:layout_marginTop="@dimen/progress_card_margin_top"
+            app:layout_constraintTop_toBottomOf="@+id/progress_asia"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:text="Hardcore"
-            android:layout_width="wrap_content"
+
+        <toy.narza.clonetracker.ui.custom.ProgressCard
+            android:id="@+id/progress_europe"
+            android:layout_marginTop="@dimen/progress_card_margin_top"
+            app:layout_constraintTop_toBottomOf="@+id/progress_america"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-    </RadioGroup>
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

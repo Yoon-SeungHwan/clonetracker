@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">clonetracker</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="region_asia">아시아</string>
+    <string name="region_america">아메리카</string>
+    <string name="region_europe">유럽</string>
+    <string-array name="region_title">
+        <item>Unknown</item>
+        <item>아메리카</item>
+        <item>유럽</item>
+        <item>아시아</item>
+    </string-array>
+    <string-array name="step_messages">
+        <item>성역에 공포의 응시가 느껴집니다.</item>
+        <item>성역에 공포가 다가옵니다.</item>
+        <item>성역 안에 공포가 형성되기 시작합니다.</item>
+        <item>성역 곳곳에 공포가 퍼집니다.</item>
+        <item>성역에 공포가 풀려나려 합니다.</item>
+        <item>디아블로가 성역을 침공했습니다!</item>
+    </string-array>
+</resources>
