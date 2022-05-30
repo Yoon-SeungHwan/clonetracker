@@ -1,16 +1,12 @@
 package toy.narza.clonetracker
 
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
 import retrofit2.Call
 import retrofit2.Response
 import toy.narza.clonetracker.db.CloneData
@@ -19,8 +15,8 @@ import toy.narza.clonetracker.repositories.RoomRepository
 import toy.narza.clonetracker.ui.main.SectionsPagerAdapter
 import toy.narza.clonetracker.ui.viewmodel.DataViewModel
 import toy.narza.clonetracker.ui.viewmodel.DataViewModelFactory
-import toy.narza.clonetracker.utils.printPretty
-import java.time.Instant
+import java.io.IOException
+import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,19 +47,32 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     response.body().let {
                         if (it !== null) {
-                            printPretty<List<CloneData>>(it)
-                            val gson = GsonBuilder().setPrettyPrinting().create()
-                            val itemType = object : TypeToken<List<CloneData>>() {}.type
                             viewModel.insertAll(it)
                         }
                     }
                 }
 
                 override fun onFailure(call: Call<List<CloneData>>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    Toast.makeText(this@MainActivity, R.string.msg_failed_load_data, Toast.LENGTH_SHORT).show()
                 }
 
             })
         }
     }
+
+    fun loadJSONFromAsset(): String {
+        try {
+            val `is`: InputStream = this.assets.open("Sample.json")
+            val size: Int = `is`.available()
+            val buffer = ByteArray(size)
+            `is`.read(buffer)
+            `is`.close()
+
+            return String(buffer)
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            return "[]"
+        }
+    }
+
 }

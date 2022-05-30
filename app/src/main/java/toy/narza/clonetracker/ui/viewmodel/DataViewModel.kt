@@ -18,8 +18,9 @@ class DataViewModel(
     var errorMessage = MutableLiveData<String>()
 
     fun insertAll(dataList: List<CloneData>) = viewModelScope.launch {
-        Log.e("Test", "repository.insert ${dataList.size}")
         repository.insert(dataList)
+        getStandardData()
+        getLadderData()
     }
 
     fun getStandardData() = viewModelScope.launch {
@@ -28,7 +29,8 @@ class DataViewModel(
     }
 
     fun getLadderData() = viewModelScope.launch {
-        val dataList = repository.getStandard()
+        val dataList = repository.getLadder()
         ladderDataList.postValue(dataList)
     }
+
 }

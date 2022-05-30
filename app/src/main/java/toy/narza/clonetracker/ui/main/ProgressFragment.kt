@@ -58,12 +58,10 @@ class ProgressFragment : Fragment() {
             LadderMode.Ladder -> {
                 viewModel.ladderDataList.observe(viewLifecycleOwner, observer)
                 viewModel.getLadderData()
-                Log.e("TEST", "getLadder")
             }
             LadderMode.Standard -> {
                 viewModel.standardDataList.observe(viewLifecycleOwner, observer)
                 viewModel.getStandardData()
-                Log.e("TEST", "getLadderStandard")
             }
         }
 
@@ -77,9 +75,7 @@ class ProgressFragment : Fragment() {
         fun newInstance(ladderMode: LadderMode): ProgressFragment {
             return ProgressFragment().apply {
                 arguments = Bundle().apply {
-                    Log.e("Test", "LadderMode -> ${ladderMode.name}")
                     putSerializable(LADDER_MODE, ladderMode)
-                    putInt("TEST", 1)
                 }
             }
         }

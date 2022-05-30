@@ -22,6 +22,5 @@ class StepPoint : ConstraintLayout {
 
     override fun setSelected(selected: Boolean) {
         super.setSelected(selected)
-        Log.e("TEST", "isSelected ${isSelected}")
     }
 }

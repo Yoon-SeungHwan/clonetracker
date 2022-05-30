@@ -1,0 +1,86 @@
+[
+  {
+    "ladder": 2,
+    "hc": 2,
+    "progress": 3,
+    "region": 1,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 2,
+    "hc": 2,
+    "progress": 3,
+    "region": 3,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 2,
+    "hc": 2,
+    "progress": 3,
+    "region": 2,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 1,
+    "hc": 2,
+    "progress": 3,
+    "region": 2,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 1,
+    "hc": 1,
+    "progress": 2,
+    "region": 2,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 2,
+    "hc": 1,
+    "progress": 2,
+    "region": 1,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 2,
+    "hc": 1,
+    "progress": 2,
+    "region": 3,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 1,
+    "hc": 2,
+    "progress": 2,
+    "region": 1,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 1,
+    "hc": 2,
+    "progress": 2,
+    "region": 3,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 1,
+    "hc": 1,
+    "progress": 2,
+    "region": 1,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 1,
+    "hc": 1,
+    "progress": 2,
+    "region": 3,
+    "timestamped": 1653469647
+  },
+  {
+    "ladder": 2,
+    "hc": 1,
+    "progress": 2,
+    "region": 2,
+    "timestamped": 1653469647
+  }
+]

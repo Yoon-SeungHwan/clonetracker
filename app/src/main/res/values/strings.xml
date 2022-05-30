@@ -6,6 +6,7 @@
     <string name="region_asia">Asia</string>
     <string name="region_america">America</string>
     <string name="region_europe">EU</string>
+    <string name="msg_failed_load_data">Failed to load data</string>
     <string-array name="region_title">
         <item>Unknown</item>
         <item>America</item>

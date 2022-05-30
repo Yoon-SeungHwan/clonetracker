@@ -6,6 +6,7 @@
     <string name="region_asia">아시아</string>
     <string name="region_america">아메리카</string>
     <string name="region_europe">유럽</string>
+    <string name="msg_failed_load_data">정보를 가져오는데 실패 했습니다</string>
     <string-array name="region_title">
         <item>Unknown</item>
         <item>아메리카</item>

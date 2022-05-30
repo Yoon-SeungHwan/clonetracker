@@ -21,7 +21,7 @@ object Utils {
     }
 
     fun progressToString(context: Context, progress: Int): String {
-        return context.resources.getStringArray(R.array.step_messages).getOrElse(progress) { "" }
+        return context.resources.getStringArray(R.array.step_messages).getOrElse(progress - 1) { "" }
     }
 
     fun timestampToString(context: Context, timestamp: Long): String {

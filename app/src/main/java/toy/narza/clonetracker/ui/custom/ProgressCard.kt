@@ -1,9 +1,12 @@
 package toy.narza.clonetracker.ui.custom
 
+import android.animation.Animator
+import android.animation.Animator.AnimatorListener
 import android.content.Context
 import android.os.Handler
 import android.util.AttributeSet
 import android.util.Log
+import android.view.animation.Animation.AnimationListener
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -22,19 +25,18 @@ class ProgressCard @JvmOverloads constructor(
     private val tvLastUpdatedTime: TextView
     private val indicator: ImageView
     private val cardViewWidth: Int
+    private val pointViews: Array<StepPoint>
 
     init {
         inflate(context, R.layout.step_progress_bar, this)
-        val stepPoint1 = findViewById<StepPoint>(R.id.step_point_1)
-        val stepPoint2 = findViewById<StepPoint>(R.id.step_point_2)
-        val stepPoint3 = findViewById<StepPoint>(R.id.step_point_3)
-        val stepPoint4 = findViewById<StepPoint>(R.id.step_point_4)
-        val stepPoint5 = findViewById<StepPoint>(R.id.step_point_5)
-        val stepPoint6 = findViewById<StepPoint>(R.id.step_point_6)
-
-        Handler().postDelayed({
-            stepPoint1.isSelected = true
-        }, 2000)
+        pointViews = arrayOf(
+            findViewById(R.id.step_point_1),
+            findViewById(R.id.step_point_2),
+            findViewById(R.id.step_point_3),
+            findViewById(R.id.step_point_4),
+            findViewById(R.id.step_point_5),
+            findViewById(R.id.step_point_6),
+        )
 
         titleView = findViewById(R.id.title)
         messageView = findViewById(R.id.message)
@@ -64,9 +66,23 @@ class ProgressCard @JvmOverloads constructor(
         indicator.animate()
             .setDuration(1200L)
             .translationX(widthPerStep * data.progress - indicatorWidthOffset)
+            .setListener(object: AnimatorListener{
+                override fun onAnimationStart(p0: Animator?) {
+                }
+
+                override fun onAnimationEnd(p0: Animator?) {
+                }
+
+                override fun onAnimationCancel(p0: Animator?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onAnimationRepeat(p0: Animator?) {
+                }
+
+            })
 
         tvLastUpdatedTime.text = Utils.timestampToString(context, data.timestamped)
-        Log.e("TEST", "Mode-> ${data.mode}")
     }
 
 }

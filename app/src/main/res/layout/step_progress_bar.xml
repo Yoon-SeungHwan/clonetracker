@@ -53,6 +53,7 @@
                 app:layout_constraintTop_toTopOf="@id/title"
                 app:layout_constraintBottom_toBottomOf="@+id/title"
                 app:layout_constraintRight_toRightOf="parent"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
@@ -60,7 +61,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:gravity="center_horizontal"
                 android:text="@string/region_asia"
                 android:textColor="@color/pink_1000"
                 android:textSize="@dimen/progress_card_message_size"
@@ -75,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 app:layout_constraintLeft_toLeftOf="@+id/container"
                 app:layout_constraintTop_toTopOf="@+id/indicator"
                 app:layout_constraintBottom_toBottomOf="@+id/indicator"

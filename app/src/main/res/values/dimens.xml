@@ -6,7 +6,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="step_circle_size">20dp</dimen>
-    <dimen name="step_progress_width">40dp</dimen>
+    <dimen name="step_progress_width">20dp</dimen>
     <dimen name="step_progress_height">4dp</dimen>
     <dimen name="progress_card_margin_top">20dp</dimen>
     <dimen name="progress_card_title_size">24sp</dimen>
