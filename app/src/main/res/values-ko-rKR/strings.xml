@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">clonetracker</string>
+    <string name="app_name">NZ 우버디아 트래커</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="region_asia">아시아</string>
     <string name="region_america">아메리카</string>
     <string name="region_europe">유럽</string>
+    <string name="mode_sc">스탠다드</string>
+    <string name="mode_hc">하드코어</string>
+    <string name="mode_standard">스탠다드</string>
+    <string name="mode_ladder">래더</string>
     <string name="msg_failed_load_data">정보를 가져오는데 실패 했습니다</string>
+    <string name="msg_notify_progress">우버디아 단계가 갱신 되었습니다. $s $s $s</string>
+    <string name="title_notification">주의!</string>
     <string-array name="region_title">
         <item>Unknown</item>
         <item>아메리카</item>

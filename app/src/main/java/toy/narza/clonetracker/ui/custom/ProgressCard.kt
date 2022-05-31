@@ -74,7 +74,6 @@ class ProgressCard @JvmOverloads constructor(
                 }
 
                 override fun onAnimationCancel(p0: Animator?) {
-                    TODO("Not yet implemented")
                 }
 
                 override fun onAnimationRepeat(p0: Animator?) {

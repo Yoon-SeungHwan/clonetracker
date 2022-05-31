@@ -20,5 +20,5 @@ class CloneData (
 
     @field:SerializedName("timestamped")
     val timestamped: Long,
-) {
+): java.io.Serializable {
 }

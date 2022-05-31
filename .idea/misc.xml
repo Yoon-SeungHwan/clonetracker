@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/baseline_refresh_36.xml" value="0.1685" />
         <entry key="app/src/main/res/drawable/step_circle.xml" value="0.178" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17325227963525835" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.17148132324218748" />

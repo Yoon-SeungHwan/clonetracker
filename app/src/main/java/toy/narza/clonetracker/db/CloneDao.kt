@@ -16,4 +16,5 @@ interface CloneDao {
 
     @Query("SELECT * FROM CloneData WHERE ladder = ${LadderMode.Standard}")
     suspend fun getStandard(): List<CloneData>
+
 }

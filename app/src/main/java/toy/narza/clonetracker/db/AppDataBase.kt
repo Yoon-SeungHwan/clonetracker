@@ -5,9 +5,16 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [CloneData::class], version = 1)
-abstract class AppDataBase: RoomDatabase() {
+@Database(
+    entities = [
+        CloneData::class,
+        ScheduleData::class
+    ],
+    version = 1
+)
+abstract class AppDataBase : RoomDatabase() {
     abstract fun CloneDao(): CloneDao
+    abstract fun ScheduleDao(): ScheduleDao
 
     companion object {
         private const val TAG = "AppDataBase"
@@ -17,7 +24,9 @@ abstract class AppDataBase: RoomDatabase() {
                 instance ?: Room.databaseBuilder(
                     context,
                     AppDataBase::class.java,
-                    "name")
+                    TAG
+                )
+                    .allowMainThreadQueries()
                     .build()
             }
         }

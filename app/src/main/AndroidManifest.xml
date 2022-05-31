@@ -3,6 +3,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -10,18 +11,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Clonetracker" >
+        android:theme="@style/Theme.Clonetracker">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:exported="true"
-            android:theme="@style/Theme.Clonetracker.NoActionBar" >
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Clonetracker.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".service.NZService"
+            android:enabled="true" />
     </application>
 
 </manifest>

@@ -1,18 +1,16 @@
 package toy.narza.clonetracker.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import toy.narza.clonetracker.R
 import toy.narza.clonetracker.db.CloneData
 import toy.narza.clonetracker.network.constants.LadderMode
+import toy.narza.clonetracker.network.constants.Mode
 import toy.narza.clonetracker.network.constants.Region
 import toy.narza.clonetracker.repositories.RoomRepository
 import toy.narza.clonetracker.ui.custom.ProgressCard
@@ -39,18 +37,26 @@ class ProgressFragment : Fragment() {
             (arguments?.get(ProgressFragment.LADDER_MODE) ?: LadderMode.Standard) as LadderMode
 
         val root = inflater.inflate(R.layout.fragment_main, container, false)
-        val asia: ProgressCard = root.findViewById(R.id.progress_asia)
-        val america: ProgressCard = root.findViewById(R.id.progress_america)
-        val europe: ProgressCard = root.findViewById(R.id.progress_europe)
+
         val observer = Observer<List<CloneData>> {
-            it.find { data -> data.region == Region.Americas.index }?.let { data ->
-                america.setData(data)
+
+            val hcData = it.filter { data -> data.mode == Mode.Hardcore.index }
+            val scData = it.filter { data -> data.mode == Mode.Softcore.index }
+
+
+            for (data in scData) {
+                when (data.region) {
+                    Region.Americas.index -> root.findViewById<ProgressCard>(R.id.progress_america).setData(data)
+                    Region.Europe.index -> root.findViewById<ProgressCard>(R.id.progress_europe).setData(data)
+                    Region.Asia.index -> root.findViewById<ProgressCard>(R.id.progress_asia).setData(data)
+                }
             }
-            it.find { data -> data.region == Region.Europe.index }?.let { data ->
-                europe.setData(data)
-            }
-            it.find { data -> data.region == Region.Asia.index }?.let { data ->
-                asia.setData(data)
+            for (data in hcData) {
+                when (data.region) {
+                    Region.Americas.index -> root.findViewById<ProgressCard>(R.id.progress_america_hc).setData(data)
+                    Region.Europe.index -> root.findViewById<ProgressCard>(R.id.progress_europe_hc).setData(data)
+                    Region.Asia.index -> root.findViewById<ProgressCard>(R.id.progress_asia_hc).setData(data)
+                }
             }
         }
 
@@ -67,6 +73,7 @@ class ProgressFragment : Fragment() {
 
         return root
     }
+
 
     companion object {
         private const val LADDER_MODE = "ladder_mode"

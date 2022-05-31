@@ -9,7 +9,9 @@
     <dimen name="step_progress_width">20dp</dimen>
     <dimen name="step_progress_height">4dp</dimen>
     <dimen name="progress_card_margin_top">20dp</dimen>
-    <dimen name="progress_card_title_size">24sp</dimen>
+    <dimen name="section_title_size">20sp</dimen>
+    <dimen name="progress_card_title_size">20sp</dimen>
     <dimen name="progress_card_message_size">18sp</dimen>
-    <dimen name="progress_card_timestamp_size">20sp</dimen>
+    <dimen name="progress_card_timestamp_size">18sp</dimen>
+    <dimen name="bottom_padding_size">120dp</dimen>
 </resources>

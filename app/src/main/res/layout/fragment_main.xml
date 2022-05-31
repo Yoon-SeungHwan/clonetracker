@@ -8,37 +8,87 @@
     tools:context=".ui.main.ProgressFragment">
 
     <ScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <toy.narza.clonetracker.ui.custom.ProgressCard
-            android:id="@+id/progress_asia"
-            android:layout_marginTop="@dimen/progress_card_margin_top"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintHeight="wrap_content"
-            app:layout_constraintWidth="match_parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:paddingBottom="@dimen/bottom_padding_size">
 
-        <toy.narza.clonetracker.ui.custom.ProgressCard
-            android:id="@+id/progress_america"
-            android:layout_marginTop="@dimen/progress_card_margin_top"
-            app:layout_constraintTop_toBottomOf="@+id/progress_asia"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:textSize="@dimen/section_title_size"
+                android:alpha="0.87"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="@dimen/progress_card_margin_top"
+                android:text="@string/mode_sc"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <toy.narza.clonetracker.ui.custom.ProgressCard
-            android:id="@+id/progress_europe"
-            android:layout_marginTop="@dimen/progress_card_margin_top"
-            app:layout_constraintTop_toBottomOf="@+id/progress_america"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <toy.narza.clonetracker.ui.custom.ProgressCard
+                android:id="@+id/progress_asia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/progress_card_margin_top"
+                app:layout_constraintHeight="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth="match_parent" />
+
+            <toy.narza.clonetracker.ui.custom.ProgressCard
+                android:id="@+id/progress_america"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/progress_card_margin_top"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_asia" />
+
+            <toy.narza.clonetracker.ui.custom.ProgressCard
+                android:id="@+id/progress_europe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/progress_card_margin_top"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_america" />
+
+            <TextView
+                android:textSize="@dimen/section_title_size"
+                android:alpha="0.87"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="@dimen/progress_card_margin_top"
+                android:text="@string/mode_hc"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <toy.narza.clonetracker.ui.custom.ProgressCard
+                android:id="@+id/progress_asia_hc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/progress_card_margin_top"
+                app:layout_constraintHeight="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth="match_parent" />
+
+            <toy.narza.clonetracker.ui.custom.ProgressCard
+                android:id="@+id/progress_america_hc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/progress_card_margin_top"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_asia" />
+
+            <toy.narza.clonetracker.ui.custom.ProgressCard
+                android:id="@+id/progress_europe_hc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/progress_card_margin_top"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_america" />
         </LinearLayout>
     </ScrollView>
 

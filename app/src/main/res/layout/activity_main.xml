@@ -11,6 +11,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        app:layout_scrollFlags="scroll|enterAlways"
         android:theme="@style/Theme.Clonetracker.AppBarOverlay">
 
         <TextView
@@ -26,20 +27,30 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorSecondary"/>
+        <ProgressBar
+            android:id="@+id/timer_bar"
+            android:max="180000"
+            android:progressTint="@color/teal_700"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"/>
     </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <androidx.viewpager.widget.PagerTitleStrip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-    </androidx.viewpager.widget.ViewPager>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -50,11 +61,5 @@
         app:useCompatPadding="true"
         app:srcCompat="@drawable/baseline_refresh_white_48" />
 
-    <ImageView
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="bottom"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/logo"
-        />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

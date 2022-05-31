@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">clonetracker</string>
+    <string name="app_name">NZ Diablo Clone Tracker</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="region_asia">Asia</string>
     <string name="region_america">America</string>
     <string name="region_europe">EU</string>
+    <string name="mode_sc">Softcore</string>
+    <string name="mode_hc">Hardcore</string>
+    <string name="mode_standard">Standard</string>
+    <string name="mode_ladder">Ladder</string>
     <string name="msg_failed_load_data">Failed to load data</string>
+    <string name="msg_notify_progress">Progress has been updated</string>
+    <string name="title_notification">Warning!</string>
     <string-array name="region_title">
         <item>Unknown</item>
         <item>America</item>
